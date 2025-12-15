@@ -1,0 +1,1 @@
+var json_Apotik_18 = {"type":"FeatureCollection","name":"Apotik_18","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","Nama":"Apotik"},"geometry":{"type":"Point","coordinates":[109.476488257259533,-7.450243130017726]}}]}

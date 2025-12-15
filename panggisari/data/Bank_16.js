@@ -1,0 +1,1 @@
+var json_Bank_16 = {"type":"FeatureCollection","name":"Bank_16","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","Nama":"Bank BRI Unit Purwosobo"},"geometry":{"type":"Point","coordinates":[109.476134792288718,-7.449941449334052]}}]}
