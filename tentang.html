@@ -50,18 +50,6 @@
         filter: blur(1px);
       }
 
-      .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.98) 0%,
-          rgba(255, 182, 193, 0.95) 50%,
-          rgba(255, 105, 180, 0.92) 100%
-        );
-        z-index: 1;
-      }
-
       .hero-content {
         position: relative;
         z-index: 2;
@@ -76,6 +64,11 @@
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
+      }
+
+      /* Hilangkan scrollbar */
+      body::-webkit-scrollbar {
+        display: none;
       }
 
       .navbar-container:not(.scrolled) .glassmorphism {
@@ -129,7 +122,7 @@
         bottom: -6px;
         left: 50%;
         transform: translateX(-50%);
-        background: linear-gradient(90deg, #ff69b4, #ff1493);
+        background: linear-gradient(90deg, #111111, #111111);
         transition: width 0.3s ease;
         border-radius: 2px;
       }
@@ -149,7 +142,7 @@
       }
 
       .gradient-text {
-        background: linear-gradient(135deg, #ff1493, #ff69b4);
+        background: linear-gradient(135deg, #111111, #111111);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -162,22 +155,13 @@
         <div class="glassmorphism rounded-full px-8 py-3">
           <div class="flex justify-between items-center">
             <div class="flex items-center space-x-3">
-              <div
-                class="bg-gradient-to-br from-pink-400 to-pink-600 p-2 rounded-xl"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                  />
-                </svg>
+              <!-- Logo dengan gambar - Ganti src dengan logo Anda -->
+              <div class="bg-white p-1 rounded-xl overflow-hidden">
+                <img
+                  src="image/logo desa.png"
+                  alt="Logo"
+                  class="h-10 w-10 object-cover rounded-lg"
+                />
               </div>
               <div>
                 <h1 class="text-base font-bold text-gray-800">
@@ -191,22 +175,22 @@
               <div class="flex items-center space-x-6">
                 <a
                   href="index.html"
-                  class="nav-link active text-gray-800 font-semibold text-sm"
+                  class="nav-link text-gray-700 font-semibold text-sm"
                   >Beranda</a
                 >
                 <a
                   href="panggisari/panggisari.html"
-                  class="nav-link text-gray-600 hover:text-gray-900 font-semibold text-sm"
+                  class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
                   >Peta Desa</a
                 >
                 <a
                   href="mandiraja/mandiraja.html"
-                  class="nav-link text-gray-600 hover:text-gray-900 font-semibold text-sm"
+                  class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
                   >Peta Kecamatan</a
                 >
                 <a
                   href="tentang.html"
-                  class="nav-link text-gray-600 hover:text-gray-900 font-semibold text-sm"
+                  class="nav-link active text-gray-700 hover:text-gray-900 font-semibold text-sm"
                   >Tentang</a
                 >
               </div>
@@ -247,22 +231,22 @@
           <div class="space-y-2">
             <a
               href="index.html"
-              class="block px-4 py-3 rounded-xl text-gray-900 font-semibold bg-pink-100"
+              class="block px-4 py-3 rounded-xl text-gray-700 font-semibold bg-pink-100"
               >Beranda</a
             >
             <a
               href="panggisari/panggisari.html"
-              class="block px-4 py-3 rounded-xl text-gray-600 hover:bg-pink-50"
+              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
               >Peta Desa</a
             >
             <a
               href="mandiraja/mandiraja.html"
-              class="block px-4 py-3 rounded-xl text-gray-600 hover:bg-pink-50"
+              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
               >Peta Kecamatan</a
             >
             <a
               href="tentang.html"
-              class="block px-4 py-3 rounded-xl text-gray-600 hover:bg-pink-50"
+              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
               >Tentang</a
             >
           </div>
@@ -304,10 +288,10 @@
             Profil Desa Panggisari
           </h2>
           <p class="text-gray-600 leading-relaxed max-w-4xl mb-8">
-            Desa Panggisari terletak di Kecamatan Mandiraja, Kabupaten Banjarnegara,
-            Provinsi Jawa Tengah. Desa ini memiliki posisi strategis dengan
-            akses jalan yang baik serta infrastruktur yang terus berkembang
-            untuk menunjang aktivitas masyarakat.
+            Desa Panggisari terletak di Kecamatan Mandiraja, Kabupaten
+            Banjarnegara, Provinsi Jawa Tengah. Desa ini memiliki posisi
+            strategis dengan akses jalan yang baik serta infrastruktur yang
+            terus berkembang untuk menunjang aktivitas masyarakat.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -381,22 +365,13 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           <div>
             <div class="flex items-center space-x-3 mb-4">
-              <div
-                class="bg-gradient-to-br from-pink-400 to-pink-600 p-2 rounded-xl"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                  />
-                </svg>
+              <!-- Logo Gambar - Ganti src dengan logo Anda -->
+              <div class="bg-white p-1 rounded-xl overflow-hidden shadow-md">
+                <img
+                  src="image/logo desa.png"
+                  alt="Logo Peta Wilayah Mandiraja"
+                  class="h-12 w-12 object-cover rounded-lg"
+                />
               </div>
               <h3 class="text-xl font-bold gradient-text">
                 Peta Wilayah Mandiraja
@@ -416,13 +391,15 @@
                 >
               </li>
               <li>
-                <a href="peta-desa.html" class="hover:text-pink-500 transition"
+                <a
+                  href="panggisari/panggisari.html"
+                  class="hover:text-pink-500 transition"
                   >Peta Desa</a
                 >
               </li>
               <li>
                 <a
-                  href="peta-kecamatan.html"
+                  href="mandiraja/mandiraja.html"
                   class="hover:text-pink-500 transition"
                   >Peta Kecamatan</a
                 >
@@ -446,7 +423,7 @@
         <div
           class="border-t border-pink-100 pt-8 text-center text-gray-600 text-sm"
         >
-          <p>&copy; 2024 Peta Wilayah Mandiraja. Hak Cipta Dilindungi.</p>
+          <p>&copy; 2025 Peta Wilayah Mandiraja. Hak Cipta Dilindungi.</p>
         </div>
       </div>
     </footer>
