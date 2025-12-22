@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Peta GIS Desa panggisar</title>
+    <title>Tentang - Peta GIS Desa Panggisari</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
@@ -34,27 +34,6 @@
         scrollbar-width: none;
       }
 
-      .hero-section {
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.15;
-        filter: blur(1px);
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
-
       .navbar-container {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -64,11 +43,6 @@
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
-      }
-
-      /* Hilangkan scrollbar */
-      body::-webkit-scrollbar {
-        display: none;
       }
 
       .navbar-container:not(.scrolled) .glassmorphism {
@@ -132,19 +106,55 @@
         width: 100%;
       }
 
-      .feature-icon {
-        transition: all 0.4s ease;
-        font-size: 80px;
-      }
-
-      .card-modern:hover .feature-icon {
-        transform: scale(1.15);
-      }
-
       .gradient-text {
         background: linear-gradient(135deg, #111111, #111111);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+
+      .image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        transition: all 0.4s ease;
+      }
+
+      .image-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .image-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .stat-card {
+        background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+      }
+
+      .section-card {
+        background: white;
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
       }
     </style>
   </head>
@@ -155,7 +165,6 @@
         <div class="glassmorphism rounded-full px-8 py-3">
           <div class="flex justify-between items-center">
             <div class="flex items-center space-x-3">
-              <!-- Logo dengan gambar - Ganti src dengan logo Anda -->
               <div class="p-1 rounded-xl overflow-hidden">
                 <img
                   src="image/logo desa.png"
@@ -176,23 +185,30 @@
                 <a
                   href="beranda.html"
                   class="nav-link text-gray-700 font-semibold text-sm"
-                  >Beranda</a
                 >
+                  Beranda
+                </a>
+
                 <a
                   href="panggisari/panggisari.html"
                   class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
-                  >Peta Desa</a
                 >
+                  Peta Desa
+                </a>
+
                 <a
                   href="mandiraja/mandiraja.html"
                   class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
-                  >Peta Kecamatan</a
                 >
+                  Peta Kecamatan
+                </a>
+
                 <a
                   href="tentang.html"
                   class="nav-link active text-gray-700 hover:text-gray-900 font-semibold text-sm"
-                  >Tentang</a
                 >
+                  Tentang
+                </a>
               </div>
             </div>
 
@@ -231,24 +247,31 @@
           <div class="space-y-2">
             <a
               href="beranda.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 font-semibold bg-pink-100"
-              >Beranda</a
+              class="block px-4 py-3 rounded-xl text-gray-700 font-semibold"
             >
+              Beranda
+            </a>
+
             <a
               href="panggisari/panggisari.html"
               class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
-              >Peta Desa</a
             >
+              Peta Desa
+            </a>
+
             <a
               href="mandiraja/mandiraja.html"
               class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
-              >Peta Kecamatan</a
             >
+              Peta Kecamatan
+            </a>
+
             <a
               href="tentang.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
-              >Tentang</a
+              class="block px-4 py-3 rounded-xl text-gray-700 bg-pink-100 font-semibold"
             >
+              Tentang
+            </a>
           </div>
         </div>
       </div>
@@ -259,7 +282,7 @@
       <div class="max-w-4xl mx-auto text-center fade-in">
         <div class="inline-flex items-center space-x-2 mb-4">
           <svg
-            class="w-8 h-8 text-pink-500"
+            class="w-8 h-8 text-black-500"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -268,11 +291,11 @@
             />
           </svg>
           <h1 class="text-4xl md:text-5xl font-bold">
-            Tentang <span class="gradient-text">Mandiraja</span>
+            Tentang <span class="gradient-text">Panggisari</span>
           </h1>
         </div>
         <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          Mengenal Lebih Dekat Desa Panggisari, Kecamatan Mandiraja
+          Mengenal Lebih Dekat Desa Panggisari dan Kecamatan Mandiraja
         </p>
       </div>
     </section>
@@ -280,78 +303,402 @@
     <!-- Main Content -->
     <section class="pb-24 px-4">
       <div class="max-w-7xl mx-auto space-y-16">
-        <!-- PROFIL DESA -->
+        <!-- PROFIL DESA PANGGISARI -->
         <div
           class="section-card rounded-3xl shadow-lg p-10 border border-pink-100"
         >
-          <h2 class="text-xl font-semibold text-gray-800 mb-4">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+            <svg
+              class="w-8 h-8 mr-3 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd"
+              />
+            </svg>
             Profil Desa Panggisari
           </h2>
-          <p class="text-gray-600 leading-relaxed max-w-4xl mb-8">
-            Desa Panggisari terletak di Kecamatan Mandiraja, Kabupaten
-            Banjarnegara, Provinsi Jawa Tengah. Desa ini memiliki posisi
-            strategis dengan akses jalan yang baik serta infrastruktur yang
-            terus berkembang untuk menunjang aktivitas masyarakat.
-          </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-5 bg-pink-50 rounded-2xl">
-              <p class="text-sm text-gray-500">Kode Pos</p>
-              <p class="font-semibold text-gray-800">53473</p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <p class="text-gray-600 leading-relaxed mb-6">
+                Desa Panggisari terletak di Kecamatan Mandiraja, Kabupaten
+                Banjarnegara, Provinsi Jawa Tengah. Desa ini memiliki posisi
+                strategis dengan akses jalan yang baik serta infrastruktur yang
+                terus berkembang untuk menunjang aktivitas masyarakat.
+              </p>
+              <p class="text-gray-600 leading-relaxed">
+                Sebagai bagian dari wilayah Mandiraja, Desa Panggisari terus
+                berkembang dengan tetap mempertahankan nilai-nilai kearifan
+                lokal dan kebersamaan masyarakat.
+              </p>
             </div>
-            <div class="p-5 bg-pink-50 rounded-2xl">
-              <p class="text-sm text-gray-500">Kecamatan</p>
-              <p class="font-semibold text-gray-800">Mandiraja</p>
+            <div class="image-card h-64">
+              <img
+                src="image/about.jpg"
+                alt="Desa Panggisari"
+                class="w-full h-full object-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1562679843-e9d0af0e4f46?w=800&q=80'"
+              />
             </div>
-            <div class="p-5 bg-pink-50 rounded-2xl">
-              <p class="text-sm text-gray-500">Kabupaten</p>
-              <p class="font-semibold text-gray-800">Banjarnegara</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="stat-card">
+              <p class="text-sm text-gray-600 mb-1">Kode Pos</p>
+              <p class="text-2xl font-bold text-gray-800">53473</p>
             </div>
-            <div class="p-5 bg-pink-50 rounded-2xl">
-              <p class="text-sm text-gray-500">Provinsi</p>
-              <p class="font-semibold text-gray-800">Jawa Tengah</p>
+            <div class="stat-card">
+              <p class="text-sm text-gray-600 mb-1">Kecamatan</p>
+              <p class="text-2xl font-bold text-gray-800">Mandiraja</p>
+            </div>
+            <div class="stat-card">
+              <p class="text-sm text-gray-600 mb-1">Kabupaten</p>
+              <p class="text-2xl font-bold text-gray-800">Banjarnegara</p>
+            </div>
+            <div class="stat-card">
+              <p class="text-sm text-gray-600 mb-1">Provinsi</p>
+              <p class="text-2xl font-bold text-gray-800">Jawa Tengah</p>
             </div>
           </div>
         </div>
 
-        <!-- TENTANG PENGEMBANG (VERSI MODERN) -->
+        <!-- PROFIL KECAMATAN MANDIRAJA -->
         <div
           class="section-card rounded-3xl shadow-lg p-10 border border-pink-100"
         >
-          <h2 class="text-xl font-semibold text-gray-800 mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+            <svg
+              class="w-8 h-8 mr-3 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+              />
+            </svg>
+            Profil Kecamatan Mandiraja
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="image-card h-64">
+              <img
+                src="image/about2.jpg"
+                alt="Kecamatan Mandiraja"
+                class="w-full h-full object-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80'"
+              />
+            </div>
+            <div>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                Kecamatan Mandiraja merupakan salah satu kecamatan di Kabupaten
+                Banjarnegara yang memiliki wilayah cukup luas dengan potensi
+                alam dan budaya yang beragam.
+              </p>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                Terletak di bagian selatan Kabupaten Banjarnegara, Mandiraja
+                berbatasan dengan beberapa kecamatan lain dan memiliki topografi
+                yang bervariasi dari dataran hingga perbukitan.
+              </p>
+              <p class="text-gray-600 leading-relaxed">
+                Mayoritas penduduk bekerja di sektor pertanian, perdagangan, dan
+                jasa dengan mata pencaharian utama bertani padi, palawija, dan
+                holtikultura.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card">
+              <div class="text-3xl mb-2">🏘️</div>
+              <p class="text-sm text-gray-600 mb-1">Jumlah Desa</p>
+              <p class="text-2xl font-bold text-gray-800">18 Desa</p>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl mb-2">👥</div>
+              <p class="text-sm text-gray-600 mb-1">Penduduk</p>
+              <p class="text-2xl font-bold text-gray-800">~65.000</p>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl mb-2">📏</div>
+              <p class="text-sm text-gray-600 mb-1">Luas Wilayah</p>
+              <p class="text-2xl font-bold text-gray-800">~45 km²</p>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl mb-2">🌾</div>
+              <p class="text-sm text-gray-600 mb-1">Sektor Utama</p>
+              <p class="text-2xl font-bold text-gray-800">Pertanian</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-6"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Potensi Unggulan
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="flex items-start space-x-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-xl">🌾</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Pertanian</p>
+                  <p class="text-sm text-gray-600">Padi, Jagung, Palawija</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-xl">🏪</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">UMKM</p>
+                  <p class="text-sm text-gray-600">Kerajinan & Kuliner</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-xl">🎭</span>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Budaya</p>
+                  <p class="text-sm text-gray-600">Seni & Tradisi Lokal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GALERI WILAYAH -->
+        <div
+          class="section-card rounded-3xl shadow-lg p-10 border border-pink-100"
+        >
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+            <svg
+              class="w-8 h-8 mr-3 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Galeri Wilayah
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="image-card h-56">
+              <img
+                src="image/desa.jpg"
+                alt="Persawahan"
+                onerror="this.src='https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80'"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+              >
+                <p class="text-white font-semibold">Hamparan Sawah</p>
+              </div>
+            </div>
+            <div class="image-card h-56">
+              <img
+                src="image/about.jpg"
+                alt="Jalan Desa"
+                onerror="this.src='https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=600&q=80'"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+              >
+                <p class="text-white font-semibold">Infrastruktur Desa</p>
+              </div>
+            </div>
+            <div class="image-card h-56">
+              <img
+                src="image/about2.jpg"
+                alt="Aktivitas Warga"
+                onerror="this.src='https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80'"
+              />
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+              >
+                <p class="text-white font-semibold">Aktivitas Masyarakat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TENTANG PENGEMBANG -->
+        <div
+          class="section-card rounded-3xl shadow-lg p-10 border border-pink-100"
+        >
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 flex items-center">
+            <svg
+              class="w-8 h-8 mr-3 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+              />
+            </svg>
             Tentang Pengembang
           </h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <p class="text-gray-700 leading-relaxed mb-4">
-                <strong>Panggisari Smart Map</strong> dikembangkan sebagai
-                bagian dari implementasi sistem informasi geografis berbasis web
-                untuk mendukung keterbukaan data dan kemudahan akses informasi
-                wilayah.
-              </p>
-              <p class="text-gray-600 leading-relaxed">
-                Website ini dirancang dengan pendekatan modern, responsif, dan
-                mudah digunakan oleh masyarakat umum.
-              </p>
+              <div class="mb-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                  Panggisari Smart Map
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Website ini dikembangkan sebagai bagian dari implementasi
+                  sistem informasi geografis berbasis web untuk mendukung
+                  keterbukaan data dan kemudahan akses informasi wilayah.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                  Platform ini dirancang dengan pendekatan modern, responsif,
+                  dan mudah digunakan oleh masyarakat umum untuk mengakses
+                  informasi geografis wilayah Desa Panggisari dan Kecamatan
+                  Mandiraja.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold"
+                  >Web GIS</span
+                >
+                <span
+                  class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold"
+                  >Pemetaan Digital</span
+                >
+                <span
+                  class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold"
+                  >Open Data</span
+                >
+              </div>
             </div>
 
-            <div class="bg-gray-50 rounded-2xl p-6 space-y-3">
-              <div class="flex justify-between text-sm">
-                <span class="text-gray-500">Pengembang</span>
-                <span class="font-medium">Salsabilah</span>
+            <div
+              class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 space-y-4"
+            >
+              <div class="flex items-center space-x-4 p-4 bg-white rounded-xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Pengembang</p>
+                  <p class="font-bold text-gray-800">Salsabilah</p>
+                </div>
               </div>
-              <div class="flex justify-between text-sm">
-                <span class="text-gray-500">Universitas</span>
-                <span class="font-medium">Universitas Amikom Purwokerto</span>
+
+              <div class="flex items-center space-x-4 p-4 bg-white rounded-xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Universitas</p>
+                  <p class="font-bold text-gray-800">
+                    Universitas Amikom Purwokerto
+                  </p>
+                </div>
               </div>
-              <div class="flex justify-between text-sm">
-                <span class="text-gray-500">NIM</span>
-                <span class="font-medium">24SA21A273</span>
+
+              <div class="flex items-center space-x-4 p-4 bg-white rounded-xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Prodi</p>
+                  <p class="font-bold text-gray-800">Sistem Informasi</p>
+                </div>
               </div>
-              <div class="flex justify-between text-sm">
-                <span class="text-gray-500">Jenis Sistem</span>
-                <span class="font-medium">Web GIS Kec Madiraja</span>
+              <div class="flex items-center space-x-4 p-4 bg-white rounded-xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">NIM</p>
+                  <p class="font-bold text-gray-800">24SA21A273</p>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-4 p-4 bg-white rounded-xl">
+                <div
+                  class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-500">Jenis Sistem</p>
+                  <p class="font-bold text-gray-800">Web GIS Kec Mandiraja</p>
+                </div>
               </div>
             </div>
           </div>
@@ -363,9 +710,9 @@
     <footer class="bg-white border-t-2 border-pink-100 py-16">
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+          <!-- Brand -->
           <div>
             <div class="flex items-center space-x-3 mb-4">
-              <!-- Logo Gambar - Ganti src dengan logo Anda -->
               <div class="bg-white p-1 rounded-xl overflow-hidden shadow-md">
                 <img
                   src="image/logo desa.png"
@@ -382,35 +729,41 @@
               wilayah digital dan interaktif.
             </p>
           </div>
+
+          <!-- Menu -->
           <div>
             <h3 class="text-lg font-bold text-gray-800 mb-4">Menu</h3>
             <ul class="space-y-3 text-sm text-gray-600">
               <li>
-                <a href="index.html" class="hover:text-pink-500 transition"
-                  >Beranda</a
-                >
+                <a href="beranda.html" class="hover:text-pink-500 transition">
+                  Beranda
+                </a>
               </li>
               <li>
                 <a
                   href="panggisari/panggisari.html"
                   class="hover:text-pink-500 transition"
-                  >Peta Desa</a
                 >
+                  Peta Desa
+                </a>
               </li>
               <li>
                 <a
                   href="mandiraja/mandiraja.html"
                   class="hover:text-pink-500 transition"
-                  >Peta Kecamatan</a
                 >
+                  Peta Kecamatan
+                </a>
               </li>
               <li>
-                <a href="tentang.html" class="hover:text-pink-500 transition"
-                  >Tentang</a
-                >
+                <a href="tentang.html" class="hover:text-pink-500 transition">
+                  Tentang
+                </a>
               </li>
             </ul>
           </div>
+
+          <!-- Kontak -->
           <div>
             <h3 class="text-lg font-bold text-gray-800 mb-4">Kontak</h3>
             <ul class="space-y-3 text-sm text-gray-600">
@@ -420,6 +773,8 @@
             </ul>
           </div>
         </div>
+
+        <!-- Copyright -->
         <div
           class="border-t border-pink-100 pt-8 text-center text-gray-600 text-sm"
         >
@@ -445,22 +800,17 @@
         mobileMenu.classList.toggle("hidden");
       });
 
-      // Tambahkan setelah script yang sudah ada
       document.addEventListener("DOMContentLoaded", () => {
-        // Dapatkan path halaman saat ini
         const currentPage =
           window.location.pathname.split("/").pop() || "index.html";
 
-        // Hapus semua class active
         document.querySelectorAll(".nav-link").forEach((link) => {
           link.classList.remove("active");
         });
 
-        // Tambahkan class active sesuai halaman
         document.querySelectorAll(".nav-link").forEach((link) => {
           const href = link.getAttribute("href");
 
-          // Cek jika href sesuai dengan halaman saat ini
           if (
             href === currentPage ||
             (currentPage === "" && href === "index.html") ||
