@@ -165,6 +165,7 @@
         <div class="glassmorphism rounded-full px-8 py-3">
           <div class="flex justify-between items-center">
             <div class="flex items-center space-x-3">
+              <!-- Logo dengan gambar -->
               <div class="p-1 rounded-xl overflow-hidden">
                 <img
                   src="image/logo desa.png"
@@ -180,21 +181,72 @@
               </div>
             </div>
 
+            <!-- Desktop Menu -->
             <div class="hidden md:block">
               <div class="flex items-center space-x-6">
                 <a
                   href="beranda.html"
-                  class="nav-link text-gray-700 font-semibold text-sm"
+                  class="nav-link active font-semibold text-sm"
                 >
                   Beranda
                 </a>
 
-                <a
-                  href="panggisari/panggisari.html"
-                  class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
-                >
-                  Peta Desa
-                </a>
+                <!-- Dropdown Peta Desa -->
+                <div class="relative dropdown-container">
+                  <button
+                    class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm flex items-center space-x-1"
+                    id="dropdown-btn"
+                  >
+                    <span>Peta Desa</span>
+                    <svg
+                      class="w-4 h-4 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="dropdown-menu"
+                    class="hidden absolute top-full mt-2 w-48 rounded-2xl shadow-xl overflow-hidden"
+                    style="
+                      background: rgba(255, 255, 255, 0.95);
+                      backdrop-filter: blur(20px);
+                    "
+                  >
+                    <a
+                      href="panggisari/panggisari.html"
+                      class="block px-4 py-3 text-gray-700 hover:bg-pink-50 font-medium text-sm"
+                    >
+                      Desa Panggisari
+                    </a>
+                    <a
+                      href="candiwulan/candiwulan.html"
+                      class="block px-4 py-3 text-gray-700 hover:bg-pink-50 font-medium text-sm"
+                    >
+                      Desa Candiwulan
+                    </a>
+                    <a
+                      href="purwasaba/purwasaba.html"
+                      class="block px-4 py-3 text-gray-700 hover:bg-pink-50 font-medium text-sm"
+                    >
+                      Desa Purwasaba
+                    </a>
+                    <a
+                      href="kaliwungu/kaliwungu.html"
+                      class="block px-4 py-3 text-gray-700 hover:bg-pink-50 font-medium text-sm"
+                    >
+                      Desa Kaliwungu
+                    </a>
+                  </div>
+                </div>
 
                 <a
                   href="mandiraja/mandiraja.html"
@@ -202,22 +254,23 @@
                 >
                   Peta Kecamatan
                 </a>
-
                 <a
                   href="tentang.html"
-                  class="nav-link active text-gray-700 hover:text-gray-900 font-semibold text-sm"
+                  class="nav-link text-gray-700 hover:text-gray-900 font-semibold text-sm"
                 >
                   Tentang
                 </a>
               </div>
             </div>
 
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
               <button
                 id="mobile-menu-btn"
                 class="text-gray-600 hover:text-gray-900 focus:outline-none"
               >
                 <svg
+                  id="hamburger-icon"
                   class="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
@@ -230,45 +283,103 @@
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
+                <svg
+                  id="close-icon"
+                  class="h-6 w-6 hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               </button>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Mobile Menu -->
       <div id="mobile-menu" class="hidden md:hidden mt-2">
         <div
           class="rounded-3xl shadow-xl p-4 mx-auto max-w-md"
           style="
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
           "
         >
           <div class="space-y-2">
             <a
               href="beranda.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 font-semibold"
+              class="block px-4 py-3 rounded-xl text-gray-700 font-semibold bg-pink-100"
             >
               Beranda
             </a>
 
-            <a
-              href="panggisari/panggisari.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
-            >
-              Peta Desa
-            </a>
+            <!-- Mobile Dropdown Peta Desa -->
+            <div>
+              <button
+                id="mobile-dropdown-btn"
+                class="w-full flex justify-between items-center px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50 font-semibold"
+              >
+                <span>Peta Desa</span>
+                <svg
+                  id="mobile-dropdown-arrow"
+                  class="w-4 h-4 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div id="mobile-dropdown-menu" class="hidden mt-1 ml-4 space-y-1">
+                <a
+                  href="panggisari/panggisari.html"
+                  class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-pink-50 text-sm"
+                >
+                  Desa Panggisari
+                </a>
+                <a
+                  href="candiwulan/candiwulan.html"
+                  class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-pink-50 text-sm"
+                >
+                  Desa Candiwulan
+                </a>
+                <a
+                  href="purwasaba/purwasaba.html"
+                  class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-pink-50 text-sm"
+                >
+                  Desa Purwasaba
+                </a>
+                <a
+                  href="kaliwungu/kaliwungu.html"
+                  class="block px-4 py-2 rounded-lg text-gray-600 hover:bg-pink-50 text-sm"
+                >
+                  Desa Kaliwungu
+                </a>
+              </div>
+            </div>
 
             <a
               href="mandiraja/mandiraja.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50"
+              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50 font-semibold"
             >
               Peta Kecamatan
             </a>
-
             <a
               href="tentang.html"
-              class="block px-4 py-3 rounded-xl text-gray-700 bg-pink-100 font-semibold"
+              class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-pink-50 font-semibold"
             >
               Tentang
             </a>
@@ -784,23 +895,30 @@
     </footer>
 
     <script>
-      const navbar = document.querySelector(".navbar-container");
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
       document.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.querySelector(".navbar-container");
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        // Scroll effect
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          hamburgerIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+
+        // Highlight active nav link
         const currentPage =
           window.location.pathname.split("/").pop() || "index.html";
 
@@ -811,22 +929,75 @@
         document.querySelectorAll(".nav-link").forEach((link) => {
           const href = link.getAttribute("href");
 
+          // Normalisasi path: hapus query/hash dan ambil path dasar
+          const normalizedHref = href ? href.split("#")[0].split("?")[0] : "";
+          const normalizedCurrent = currentPage.split("#")[0].split("?")[0];
+
+          // Logika penentuan active
           if (
-            href === currentPage ||
-            (currentPage === "" && href === "index.html") ||
-            (currentPage === "index.html" && href === "index.html") ||
-            (currentPage === "tentang.html" && href === "tentang.html")
+            normalizedHref === normalizedCurrent ||
+            (normalizedCurrent === "index.html" &&
+              normalizedHref === "beranda.html") ||
+            (normalizedCurrent === "" && normalizedHref === "beranda.html") ||
+            (normalizedCurrent === "beranda.html" &&
+              normalizedHref === "beranda.html") ||
+            (normalizedCurrent === "tentang.html" &&
+              normalizedHref === "tentang.html")
           ) {
             link.classList.add("active");
           }
         });
-      });
 
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          mobileMenu.classList.add("hidden");
+        // Close mobile menu on internal anchor click (#)
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            mobileMenu.classList.add("hidden");
+            hamburgerIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+          });
         });
+
+        // Desktop Dropdown Toggle
+        const dropdownBtn = document.getElementById("dropdown-btn");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const dropdownArrow = dropdownBtn.querySelector("svg");
+
+        if (dropdownBtn && dropdownMenu) {
+          dropdownBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle("hidden");
+            dropdownArrow.classList.toggle("rotate-180"); // animasi panah
+          });
+
+          // Tutup dropdown saat klik di luar
+          document.addEventListener("click", (e) => {
+            if (
+              !dropdownBtn.contains(e.target) &&
+              !dropdownMenu.contains(e.target)
+            ) {
+              dropdownMenu.classList.add("hidden");
+              dropdownArrow.classList.remove("rotate-180");
+            }
+          });
+        }
+
+        // Mobile Dropdown Toggle
+        const mobileDropdownBtn = document.getElementById(
+          "mobile-dropdown-btn"
+        );
+        const mobileDropdownMenu = document.getElementById(
+          "mobile-dropdown-menu"
+        );
+        const mobileDropdownArrow = document.getElementById(
+          "mobile-dropdown-arrow"
+        );
+
+        if (mobileDropdownBtn && mobileDropdownMenu) {
+          mobileDropdownBtn.addEventListener("click", () => {
+            mobileDropdownMenu.classList.toggle("hidden");
+            mobileDropdownArrow.classList.toggle("rotate-180");
+          });
+        }
       });
     </script>
   </body>

@@ -1,0 +1,1 @@
+var json_BalaiDesaPanggisari_3 = {"type":"FeatureCollection","name":"BalaiDesaPanggisari_3","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","Nama":"Balai Desa Panggisari"},"geometry":{"type":"Point","coordinates":[109.484215254775137,-7.44979109840614]}}]}

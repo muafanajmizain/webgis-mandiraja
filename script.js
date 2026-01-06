@@ -3,6 +3,56 @@
 const navbar = document.querySelector(".navbar-container");
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const closeIcon = document.getElementById("close-icon");
+
+// Desktop Dropdown
+const dropdownBtn = document.getElementById('dropdown-btn');
+const dropdownMenu = document.getElementById('dropdown-menu');
+const dropdownContainer = document.querySelector('.dropdown-container');
+
+if (dropdownBtn && dropdownMenu && dropdownContainer) {
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('hidden');
+    const arrow = dropdownBtn.querySelector('svg');
+    arrow.classList.toggle('rotate-180');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!dropdownContainer.contains(e.target)) {
+      dropdownMenu.classList.add('hidden');
+      const arrow = dropdownBtn.querySelector('svg');
+      arrow.classList.remove('rotate-180');
+    }
+  });
+}
+
+// Mobile Menu Toggle
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    if (hamburgerIcon && closeIcon) {
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+  });
+}
+
+// Mobile Dropdown
+const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+const mobileDropdownArrow = document.getElementById('mobile-dropdown-arrow');
+
+if (mobileDropdownBtn && mobileDropdownMenu) {
+  mobileDropdownBtn.addEventListener('click', () => {
+    mobileDropdownMenu.classList.toggle('hidden');
+    if (mobileDropdownArrow) {
+      mobileDropdownArrow.classList.toggle('rotate-180');
+    }
+  });
+}
 
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
@@ -55,14 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.add('active');
     }
   });
-});
-
-// Mobile menu toggle
-if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  
+  // Set active untuk dropdown items (Peta Desa)
+  const dropdownLinks = document.querySelectorAll('#dropdown-menu a, #mobile-dropdown-menu a');
+  dropdownLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.includes(currentPage)) {
+      link.classList.add('active');
+      // Tambahkan indikator visual bahwa user ada di salah satu halaman Peta Desa
+      if (dropdownBtn) {
+        dropdownBtn.classList.add('active');
+      }
+      if (mobileDropdownBtn) {
+        mobileDropdownBtn.classList.add('active');
+      }
+    }
   });
-}
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -73,6 +132,23 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       if (mobileMenu) {
         mobileMenu.classList.add("hidden");
+        if (hamburgerIcon && closeIcon) {
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      }
+    }
+  });
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      if (hamburgerIcon && closeIcon) {
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
       }
     }
   });
