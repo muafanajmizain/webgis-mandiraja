@@ -549,17 +549,16 @@
     <script src="js/leaflet-measure.js"></script>
     <script src="js/leaflet-search.js"></script>
     <script src="data/wilayahdesakaliwungu_1.js"></script>
-    <script src="data/BalaiDesa_2.js"></script>
-    <script src="data/TempatIbadah_3.js"></script>
-    <script src="data/Sekolah_4.js"></script>
+    <script src="data/jjalan_2.js"></script>
+    <script src="data/BalaiDesa_3.js"></script>
     <script>
       var map = L.map("map", {
         zoomControl: false,
         maxZoom: 28,
         minZoom: 1,
       }).fitBounds([
-        [-7.520626468472913, 109.42464312577333],
-        [-7.4473566256939705, 109.57904826514675],
+        [-7.4991247816808855, 109.45608378825814],
+        [-7.462489590934825, 109.53328635794487],
       ]);
       var hash = new L.Hash(map);
       map.attributionControl.setPrefix(
@@ -708,14 +707,14 @@
         return {
           pane: "pane_wilayahdesakaliwungu_1",
           opacity: 1,
-          color: "rgba(35,35,35,1.0)",
+          color: "rgba(255,127,0,1.0)",
           dashArray: "",
           lineCap: "butt",
           lineJoin: "miter",
-          weight: 1.0,
+          weight: 5.0,
           fill: true,
           fillOpacity: 1,
-          fillColor: "rgba(77,175,74,0.4666666666666667)",
+          fillColor: "rgba(255,255,255,0.38823529411764707)",
           interactive: true,
         };
       }
@@ -737,7 +736,7 @@
       );
       bounds_group.addLayer(layer_wilayahdesakaliwungu_1);
       map.addLayer(layer_wilayahdesakaliwungu_1);
-      function pop_BalaiDesa_2(feature, layer) {
+      function pop_jjalan_2(feature, layer) {
         var popupContent =
           '<table>\
                     <tr>\
@@ -770,104 +769,34 @@
         layer.bindPopup(content, { maxHeight: 400 });
       }
 
-      function style_BalaiDesa_2_0() {
+      function style_jjalan_2_0() {
         return {
-          pane: "pane_BalaiDesa_2",
-          rotationAngle: 0.0,
-          rotationOrigin: "center center",
-          icon: L.icon({
-            iconUrl: "markers/BalaiDesa_2.svg",
-            iconSize: [19.0, 19.0],
-          }),
+          pane: "pane_jjalan_2",
+          opacity: 1,
+          color: "rgba(145,82,45,1.0)",
+          dashArray: "",
+          lineCap: "square",
+          lineJoin: "bevel",
+          weight: 2.0,
+          fillOpacity: 0,
           interactive: true,
         };
       }
-      map.createPane("pane_BalaiDesa_2");
-      map.getPane("pane_BalaiDesa_2").style.zIndex = 402;
-      map.getPane("pane_BalaiDesa_2").style["mix-blend-mode"] = "normal";
-      var layer_BalaiDesa_2 = new L.geoJson(json_BalaiDesa_2, {
+      map.createPane("pane_jjalan_2");
+      map.getPane("pane_jjalan_2").style.zIndex = 402;
+      map.getPane("pane_jjalan_2").style["mix-blend-mode"] = "normal";
+      var layer_jjalan_2 = new L.geoJson(json_jjalan_2, {
         attribution: "",
         interactive: true,
-        dataVar: "json_BalaiDesa_2",
-        layerName: "layer_BalaiDesa_2",
-        pane: "pane_BalaiDesa_2",
-        onEachFeature: pop_BalaiDesa_2,
-        pointToLayer: function (feature, latlng) {
-          var context = {
-            feature: feature,
-            variables: {},
-          };
-          return L.marker(latlng, style_BalaiDesa_2_0(feature));
-        },
+        dataVar: "json_jjalan_2",
+        layerName: "layer_jjalan_2",
+        pane: "pane_jjalan_2",
+        onEachFeature: pop_jjalan_2,
+        style: style_jjalan_2_0,
       });
-      bounds_group.addLayer(layer_BalaiDesa_2);
-      map.addLayer(layer_BalaiDesa_2);
-      function pop_TempatIbadah_3(feature, layer) {
-        var popupContent =
-          '<table>\
-                    <tr>\
-                        <td colspan="2">' +
-          (feature.properties["id"] !== null
-            ? autolinker.link(
-                String(feature.properties["id"])
-                  .replace(/'/g, "'")
-                  .toLocaleString()
-              )
-            : "") +
-          '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' +
-          (feature.properties["nama"] !== null
-            ? autolinker.link(
-                String(feature.properties["nama"])
-                  .replace(/'/g, "'")
-                  .toLocaleString()
-              )
-            : "") +
-          "</td>\
-                    </tr>\
-                </table>";
-        var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-        layer.on("popupopen", function (e) {
-          addClassToPopupIfMedia(content, e.popup);
-        });
-        layer.bindPopup(content, { maxHeight: 400 });
-      }
-
-      function style_TempatIbadah_3_0() {
-        return {
-          pane: "pane_TempatIbadah_3",
-          rotationAngle: 0.0,
-          rotationOrigin: "center center",
-          icon: L.icon({
-            iconUrl: "markers/TempatIbadah_3.svg",
-            iconSize: [19.0, 19.0],
-          }),
-          interactive: true,
-        };
-      }
-      map.createPane("pane_TempatIbadah_3");
-      map.getPane("pane_TempatIbadah_3").style.zIndex = 403;
-      map.getPane("pane_TempatIbadah_3").style["mix-blend-mode"] = "normal";
-      var layer_TempatIbadah_3 = new L.geoJson(json_TempatIbadah_3, {
-        attribution: "",
-        interactive: true,
-        dataVar: "json_TempatIbadah_3",
-        layerName: "layer_TempatIbadah_3",
-        pane: "pane_TempatIbadah_3",
-        onEachFeature: pop_TempatIbadah_3,
-        pointToLayer: function (feature, latlng) {
-          var context = {
-            feature: feature,
-            variables: {},
-          };
-          return L.marker(latlng, style_TempatIbadah_3_0(feature));
-        },
-      });
-      bounds_group.addLayer(layer_TempatIbadah_3);
-      map.addLayer(layer_TempatIbadah_3);
-      function pop_Sekolah_4(feature, layer) {
+      bounds_group.addLayer(layer_jjalan_2);
+      map.addLayer(layer_jjalan_2);
+      function pop_BalaiDesa_3(feature, layer) {
         var popupContent =
           '<table>\
                     <tr>\
@@ -890,6 +819,17 @@
                   .toLocaleString()
               )
             : "") +
+          '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' +
+          (feature.properties["Kades"] !== null
+            ? autolinker.link(
+                String(feature.properties["Kades"])
+                  .replace(/'/g, "'")
+                  .toLocaleString()
+              )
+            : "") +
           "</td>\
                     </tr>\
                 </table>";
@@ -900,38 +840,38 @@
         layer.bindPopup(content, { maxHeight: 400 });
       }
 
-      function style_Sekolah_4_0() {
+      function style_BalaiDesa_3_0() {
         return {
-          pane: "pane_Sekolah_4",
+          pane: "pane_BalaiDesa_3",
           rotationAngle: 0.0,
           rotationOrigin: "center center",
           icon: L.icon({
-            iconUrl: "markers/Sekolah_4.svg",
+            iconUrl: "markers/BalaiDesa_3.svg",
             iconSize: [19.0, 19.0],
           }),
           interactive: true,
         };
       }
-      map.createPane("pane_Sekolah_4");
-      map.getPane("pane_Sekolah_4").style.zIndex = 404;
-      map.getPane("pane_Sekolah_4").style["mix-blend-mode"] = "normal";
-      var layer_Sekolah_4 = new L.geoJson(json_Sekolah_4, {
+      map.createPane("pane_BalaiDesa_3");
+      map.getPane("pane_BalaiDesa_3").style.zIndex = 403;
+      map.getPane("pane_BalaiDesa_3").style["mix-blend-mode"] = "normal";
+      var layer_BalaiDesa_3 = new L.geoJson(json_BalaiDesa_3, {
         attribution: "",
         interactive: true,
-        dataVar: "json_Sekolah_4",
-        layerName: "layer_Sekolah_4",
-        pane: "pane_Sekolah_4",
-        onEachFeature: pop_Sekolah_4,
+        dataVar: "json_BalaiDesa_3",
+        layerName: "layer_BalaiDesa_3",
+        pane: "pane_BalaiDesa_3",
+        onEachFeature: pop_BalaiDesa_3,
         pointToLayer: function (feature, latlng) {
           var context = {
             feature: feature,
             variables: {},
           };
-          return L.marker(latlng, style_Sekolah_4_0(feature));
+          return L.marker(latlng, style_BalaiDesa_3_0(feature));
         },
       });
-      bounds_group.addLayer(layer_Sekolah_4);
-      map.addLayer(layer_Sekolah_4);
+      bounds_group.addLayer(layer_BalaiDesa_3);
+      map.addLayer(layer_BalaiDesa_3);
       const url = {
         "Nominatim OSM":
           "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
@@ -1002,16 +942,12 @@
       });
       var overlaysTree = [
         {
-          label: '<img src="legend/Sekolah_4.png" /> Sekolah',
-          layer: layer_Sekolah_4,
+          label: '<img src="legend/BalaiDesa_3.png" /> Balai Desa',
+          layer: layer_BalaiDesa_3,
         },
         {
-          label: '<img src="legend/TempatIbadah_3.png" /> Tempat Ibadah',
-          layer: layer_TempatIbadah_3,
-        },
-        {
-          label: '<img src="legend/BalaiDesa_2.png" /> Balai Desa',
-          layer: layer_BalaiDesa_2,
+          label: '<img src="legend/jjalan_2.png" /> jjalan',
+          layer: layer_jjalan_2,
         },
         {
           label:
@@ -1057,7 +993,7 @@
         i++;
       });
       var i = 0;
-      layer_BalaiDesa_2.eachLayer(function (layer) {
+      layer_BalaiDesa_3.eachLayer(function (layer) {
         var context = {
           feature: layer.feature,
           variables: {},
@@ -1069,53 +1005,7 @@
                   layer.feature.properties["nama"]
               ) + "</div>"
             : "",
-          { permanent: true, offset: [-0, -16], className: "css_BalaiDesa_2" }
-        );
-        labels.push(layer);
-        totalMarkers += 1;
-        layer.added = true;
-        addLabel(layer, i);
-        i++;
-      });
-      var i = 0;
-      layer_TempatIbadah_3.eachLayer(function (layer) {
-        var context = {
-          feature: layer.feature,
-          variables: {},
-        };
-        layer.bindTooltip(
-          layer.feature.properties["nama"] !== null
-            ? String(
-                "<div style=\"color: #323232; font-size: 10pt; font-family: 'Open Sans', sans-serif;\">" +
-                  layer.feature.properties["nama"]
-              ) + "</div>"
-            : "",
-          {
-            permanent: true,
-            offset: [-0, -16],
-            className: "css_TempatIbadah_3",
-          }
-        );
-        labels.push(layer);
-        totalMarkers += 1;
-        layer.added = true;
-        addLabel(layer, i);
-        i++;
-      });
-      var i = 0;
-      layer_Sekolah_4.eachLayer(function (layer) {
-        var context = {
-          feature: layer.feature,
-          variables: {},
-        };
-        layer.bindTooltip(
-          layer.feature.properties["Nama"] !== null
-            ? String(
-                "<div style=\"color: #323232; font-size: 10pt; font-family: 'Open Sans', sans-serif;\">" +
-                  layer.feature.properties["Nama"]
-              ) + "</div>"
-            : "",
-          { permanent: true, offset: [-0, -16], className: "css_Sekolah_4" }
+          { permanent: true, offset: [-0, -16], className: "css_BalaiDesa_3" }
         );
         labels.push(layer);
         totalMarkers += 1;
@@ -1125,7 +1015,7 @@
       });
       map.addControl(
         new L.Control.Search({
-          layer: layer_Sekolah_4,
+          layer: layer_BalaiDesa_3,
           initial: false,
           hideMarkerOnCollapse: true,
           propertyName: "Nama",
@@ -1138,35 +1028,15 @@
         document.getElementsByClassName("search-button")[1].className +=
           " fa fa-binoculars";
       }
-      resetLabels([
-        layer_wilayahdesakaliwungu_1,
-        layer_BalaiDesa_2,
-        layer_TempatIbadah_3,
-        layer_Sekolah_4,
-      ]);
+      resetLabels([layer_wilayahdesakaliwungu_1, layer_BalaiDesa_3]);
       map.on("zoomend", function () {
-        resetLabels([
-          layer_wilayahdesakaliwungu_1,
-          layer_BalaiDesa_2,
-          layer_TempatIbadah_3,
-          layer_Sekolah_4,
-        ]);
+        resetLabels([layer_wilayahdesakaliwungu_1, layer_BalaiDesa_3]);
       });
       map.on("layeradd", function () {
-        resetLabels([
-          layer_wilayahdesakaliwungu_1,
-          layer_BalaiDesa_2,
-          layer_TempatIbadah_3,
-          layer_Sekolah_4,
-        ]);
+        resetLabels([layer_wilayahdesakaliwungu_1, layer_BalaiDesa_3]);
       });
       map.on("layerremove", function () {
-        resetLabels([
-          layer_wilayahdesakaliwungu_1,
-          layer_BalaiDesa_2,
-          layer_TempatIbadah_3,
-          layer_Sekolah_4,
-        ]);
+        resetLabels([layer_wilayahdesakaliwungu_1, layer_BalaiDesa_3]);
       });
     </script>
   </body>
